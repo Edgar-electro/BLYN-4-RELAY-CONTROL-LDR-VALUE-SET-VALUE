@@ -244,6 +244,7 @@ void setup()
 
 void readSensor() {
   ldrVal = analogRead(LDR_PIN);
+  ldrVal = map(ldrVal, 0, 1023, 0, 100);
   Serial.print("LDR - "); Serial.println(ldrVal);
   delay(2000);
   currentTemp = dht.readTemperature();
